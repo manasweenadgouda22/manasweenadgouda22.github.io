@@ -4,23 +4,59 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Manaswee Balvant Nadgouda — Software • Cloud • Security</title>
-  <meta name="description" content="Portfolio of Manaswee Balvant Nadgouda — new-grad Software & Cloud Engineer with a security-first mindset. Projects in Python, AWS, and cybersecurity." />
+  <meta name="description" content="Portfolio of Manaswee Balvant Nadgouda — Software, Cloud, and Cybersecurity Engineer with a security-first mindset. Projects in Python, AWS, and cloud security." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
     :root { --glass: rgba(255,255,255,0.06); }
     html { scroll-behavior: smooth; }
     body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+
+    /* Components */
     .glass { background: var(--glass); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
     .chip { padding: 4px 10px; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.05); }
     .card { background: var(--glass); border-radius: 1rem; padding: 1.25rem; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.08); }
     .card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.35); }
     .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 0.75rem; padding: 0.6rem 1rem; font-weight: 700; border: 1px solid rgba(255,255,255,0.12); transition: transform 0.2s ease, background 0.3s ease, border-color 0.3s ease; }
     .btn:hover { transform: translateY(-1px); border-color: rgba(255,255,255,0.25); }
-    @keyframes gradientShift { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
-    .hero-anim { background: linear-gradient(120deg,#0b1b4a,#1e3a8a,#4338ca,#0f172a); background-size: 400% 400%; animation: gradientShift 12s ease-in-out infinite; }
+
+    /* Hero gradient animation */
+    @keyframes gradientShift { 
+      0%{background-position:0% 50%} 
+      50%{background-position:100% 50%} 
+      100%{background-position:0% 50%} 
+    }
+    .hero-anim { 
+      background: linear-gradient(120deg,#0b1b4a,#1e3a8a,#4338ca,#0f172a); 
+      background-size: 400% 400%; 
+      animation: gradientShift 12s ease-in-out infinite; 
+    }
+
+    /* Fade-in for hero text */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    /* Shimmer effect for headline */
+    .shimmer {
+      background: linear-gradient(90deg, #60a5fa, #a5f3fc, #60a5fa);
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 5s infinite linear;
+    }
+    @keyframes shimmer {
+      0% { background-position: 0% 0%; }
+      100% { background-position: -200% 0%; }
+    }
   </style>
 </head>
+
 <body class="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-slate-100">
 
   <!-- NAV -->
