@@ -21,7 +21,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(0,255,195,0.3), rgba(0,255,150,0.05));
+      background: linear-gradient(135deg, rgba(0,255,195,0.25), rgba(0,255,150,0.05));
       z-index: 0;
     }
     .section {
@@ -30,22 +30,20 @@
       animation: fadeIn 1s ease;
     }
     @keyframes fadeIn { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
-    .btn {
-      transition: all 0.3s ease;
-    }
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 10px #00ffc3;
-    }
+    .btn { transition: all 0.3s ease; }
+    .btn:hover { transform: scale(1.05); box-shadow: 0 0 12px #00ffc3; }
   </style>
 </head>
 <body>
 
   <!-- HERO -->
   <section class="hero text-center py-20 relative overflow-hidden">
-    <img src="assets/profile-photo.png" alt="avatar" class="mx-auto w-40 h-40 rounded-full shadow-lg border-2 border-green-400 relative z-10" />
+    <img src="assets/profile-photo.png" alt="avatar"
+      class="mx-auto w-40 h-40 rounded-full shadow-lg border-2 border-emerald-400 relative z-10" />
     <h1 class="text-4xl font-bold mt-6 text-emerald-300 relative z-10">Manaswee Balvant Nadgouda</h1>
-    <p class="text-lg text-emerald-200 mt-3 relative z-10">Building tomorrow's cloud & security solutions. I design resilient software and secure systems with Python, AWS, and Kubernetes — bridging development, operations, and cyber defense.</p>
+    <p class="text-lg text-emerald-200 mt-3 relative z-10">
+      Building tomorrow's cloud & security solutions. I design resilient software and secure systems with Python, AWS, and Kubernetes — bridging development, operations, and cyber defense.
+    </p>
     <div class="flex flex-wrap justify-center gap-4 mt-6 relative z-10">
       <a href="#projects" class="btn bg-emerald-500 text-black px-4 py-2 rounded-lg font-semibold">View Projects</a>
       <a href="https://www.linkedin.com/in/mnadgoud22/" target="_blank" class="btn border border-emerald-300 px-4 py-2 rounded-lg font-semibold">LinkedIn</a>
@@ -68,57 +66,62 @@
   <section id="projects" class="section bg-[#02170c]/70">
     <h2 class="text-3xl font-bold text-center text-emerald-300 mb-10">Projects</h2>
     <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-      <!-- Project Cards -->
+
       <div class="p-6 bg-black/30 rounded-xl hover:shadow-emerald-400/50 transition">
         <h3 class="text-xl font-semibold text-emerald-300 mb-2">Password Strength Checker</h3>
         <ul class="list-disc list-inside text-emerald-100 text-sm space-y-1">
-          <li>Developed a FastAPI backend with password entropy and regex policy scoring.</li>
-          <li>Built real-time frontend analyzer for user password feedback.</li>
-          <li>Integrated CI/CD using GitHub Actions for automated testing.</li>
-          <li>Implemented rate-limiting and input sanitization to prevent abuse.</li>
+          <li>Developed a FastAPI backend for entropy and policy validation.</li>
+          <li>Built live analyzer for real-time password scoring.</li>
+          <li>CI/CD automation with GitHub Actions & pytest.</li>
+          <li>Deployed securely on AWS EC2 with HTTPS enforcement.</li>
           <li><a href="https://github.com/manasweenadgouda22/password-strength-checker" target="_blank" class="text-emerald-400 underline">GitHub Repo</a></li>
         </ul>
       </div>
+
       <div class="p-6 bg-black/30 rounded-xl hover:shadow-emerald-400/50 transition">
         <h3 class="text-xl font-semibold text-emerald-300 mb-2">Network Forensics Lab</h3>
         <ul class="list-disc list-inside text-emerald-100 text-sm space-y-1">
-          <li>Configured Zeek & Suricata for multi-layer packet inspection.</li>
-          <li>Automated PCAP ingestion with Python parsing scripts.</li>
-          <li>Deployed dashboards for anomaly visualization.</li>
-          <li>Implemented NIST 800-86-aligned evidence handling.</li>
+          <li>Configured Zeek & Suricata for advanced packet inspection.</li>
+          <li>Automated PCAP parsing via Python + Pandas.</li>
+          <li>Deployed ELK dashboards for anomaly visualization.</li>
+          <li>Implemented NIST 800-86 evidence chain compliance.</li>
           <li><a href="https://github.com/manasweenadgouda22" target="_blank" class="text-emerald-400 underline">GitHub Repo</a></li>
         </ul>
       </div>
+
       <div class="p-6 bg-black/30 rounded-xl hover:shadow-emerald-400/50 transition">
         <h3 class="text-xl font-semibold text-emerald-300 mb-2">Threat Detection Scripts</h3>
         <ul class="list-disc list-inside text-emerald-100 text-sm space-y-1">
-          <li>Created CLI utilities for DNS tunneling and steganography detection.</li>
-          <li>Used Scapy and Pandas for protocol anomaly analysis.</li>
-          <li>Optimized runtime with async I/O for real-time log parsing.</li>
-          <li>Used argparse for modular command-line arguments.</li>
+          <li>Python CLI for DNS tunneling & steganography detection.</li>
+          <li>Async I/O for real-time log correlation and alerts.</li>
+          <li>Extensible argparse-based plugin architecture.</li>
+          <li>Integrated SIEM outputs for rule validation.</li>
           <li><a href="https://github.com/manasweenadgouda22" target="_blank" class="text-emerald-400 underline">GitHub Repo</a></li>
         </ul>
       </div>
+
       <div class="p-6 bg-black/30 rounded-xl hover:shadow-emerald-400/50 transition">
         <h3 class="text-xl font-semibold text-emerald-300 mb-2">Cloud Deployment Dashboard</h3>
         <ul class="list-disc list-inside text-emerald-100 text-sm space-y-1">
-          <li>Designed AWS Lambda-based backend for resource deployment tracking.</li>
-          <li>Integrated S3, CloudWatch, and DynamoDB APIs for full-stack visibility.</li>
-          <li>Built PowerBI-like dashboard using Plotly Dash and Flask.</li>
-          <li>Secured IAM roles with least-privilege policy principle.</li>
+          <li>Built AWS Lambda backend with DynamoDB & CloudWatch APIs.</li>
+          <li>Visualized deployments with Plotly Dash + Flask UI.</li>
+          <li>Implemented IAM least-privilege policies.</li>
+          <li>Added predictive analytics for scaling insights.</li>
           <li><a href="https://github.com/manasweenadgouda22" target="_blank" class="text-emerald-400 underline">GitHub Repo</a></li>
         </ul>
       </div>
+
       <div class="p-6 bg-black/30 rounded-xl hover:shadow-emerald-400/50 transition">
         <h3 class="text-xl font-semibold text-emerald-300 mb-2">AI Email & Chat Forensics</h3>
         <ul class="list-disc list-inside text-emerald-100 text-sm space-y-1">
-          <li>Developed a Streamlit dashboard correlating chat logs and metadata.</li>
-          <li>Applied TF-IDF + Logistic Regression for spam/phishing classification.</li>
-          <li>Used SQLite for conversation log storage and querying.</li>
-          <li>Visualized activity trends with Seaborn and Matplotlib.</li>
+          <li>Streamlit dashboard correlating chat metadata + activity.</li>
+          <li>TF-IDF + Logistic Regression for phishing/spam detection.</li>
+          <li>SQLite storage with query interface for investigators.</li>
+          <li>Timeline visualization via Seaborn + Matplotlib.</li>
           <li><a href="https://github.com/manasweenadgouda22/AI-Email-Chat-Forensics" target="_blank" class="text-emerald-400 underline">GitHub Repo</a></li>
         </ul>
       </div>
+
     </div>
   </section>
 
@@ -126,8 +129,8 @@
   <section id="experience" class="section text-center">
     <h2 class="text-3xl font-bold text-emerald-300 mb-4">Experience</h2>
     <p class="text-emerald-100 max-w-3xl mx-auto">
-      Hands-on with incident response, SOC operations, and cloud infrastructure setup.  
-      Experience integrating Python automation, AWS tools, and security monitoring frameworks to create efficient, scalable systems.
+      Practical experience in SOC operations, incident response, and AWS infrastructure.  
+      Leveraged automation and analytics to strengthen security posture and improve operational efficiency.
     </p>
   </section>
 
@@ -144,7 +147,7 @@
   <!-- CONTACT -->
   <section id="contact" class="section text-center">
     <h2 class="text-3xl font-bold text-emerald-300 mb-4">Contact</h2>
-    <p class="text-emerald-100">Reach out for collaborations, opportunities, or cybersecurity discussions:</p>
+    <p class="text-emerald-100">Reach out for collaborations, opportunities, or security research discussions:</p>
     <p class="mt-2 text-emerald-300 font-medium">manaswee.nadgouda22@gmail.com</p>
   </section>
 
