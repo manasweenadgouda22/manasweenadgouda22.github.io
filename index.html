@@ -1,24 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Manaswee Balvant Nadgouda — Software • Cloud • Security</title>
-  <meta name="description" content="Portfolio of Manaswee Balvant Nadgouda — new-grad Software & Cloud Engineer with a security-first mindset. Projects in Python, AWS, and cybersecurity." />
+  <meta name="description" content="New-grad Software & Cloud Engineer with a security-first mindset. Portfolio and projects by Manaswee Balvant Nadgouda."/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root { --glass: rgba(255,255,255,0.06); }
-    html { scroll-behavior: smooth; }
-    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
-    .glass { background: var(--glass); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
-    .chip { padding: 4px 10px; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.05); }
-    .card { background: var(--glass); border-radius: 1rem; padding: 1.25rem; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.08); }
-    .card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.35); }
-    .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 0.75rem; padding: 0.6rem 1rem; font-weight: 700; border: 1px solid rgba(255,255,255,0.12); transition: transform 0.2s ease, background 0.3s ease, border-color 0.3s ease; }
-    .btn:hover { transform: translateY(-1px); border-color: rgba(255,255,255,0.25); }
-    @keyframes gradientShift { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
-    .hero-anim { background: linear-gradient(120deg,#0b1b4a,#1e3a8a,#4338ca,#0f172a); background-size: 400% 400%; animation: gradientShift 12s ease-in-out infinite; }
+    :root{--glass:rgba(255,255,255,.06)}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+    .glass{background:var(--glass);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08)}
+    .chip{padding:4px 10px;border-radius:9999px;font-size:.75rem;font-weight:600;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04)}
+    .card{background:var(--glass);border-radius:1rem;padding:1.25rem;border:1px solid rgba(255,255,255,.08);transition:transform .25s ease, box-shadow .25s ease}
+    .card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.45)}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;justify-content:center;border-radius:.8rem;padding:.65rem 1rem;font-weight:800;border:1px solid rgba(255,255,255,.14);transition:transform .2s ease, background .25s ease, border-color .25s ease}
+    .btn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.28)}
+    /* Cyber animated gradient */
+    @keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+    .hero-anim{background:linear-gradient(125deg,#020617,#0b2447,#1e3a8a,#0f172a);background-size:450% 450%;animation:gradientShift 15s ease-in-out infinite}
+    /* Subtle scanline */
+    .scanlines:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:100% 4px;opacity:.06;pointer-events:none}
+    /* Glow text */
+    .glow{text-shadow:0 0 18px rgba(56,189,248,.35)}
+    /* Section transitions (variety) */
+    .fade-in{animation:fade .8s ease both}
+    @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    .slide-in{animation:slide .8s ease both}
+    @keyframes slide{from{opacity:0;transform:translateX(-12px)}to{opacity:1;transform:none}}
+    .pop{animation:pop .5s ease both}
+    @keyframes pop{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+    /* Cert flip cards */
+    .flip{perspective:1000px}
+    .flip-inner{position:relative;transform-style:preserve-3d;transition:transform .6s}
+    .flip:hover .flip-inner{transform:rotateY(180deg)}
+    .flip-face{position:absolute;inset:0;backface-visibility:hidden}
+    .flip-back{transform:rotateY(180deg)}
+    /* Experience slider */
+    .slider{overflow:hidden}
+    .track{display:flex;transition:transform .5s ease}
+    .slide{min-width:100%}
+    /* Inline heroicons */
+    .icon{width:18px;height:18px;opacity:.9}
+    .code-btn{background:rgba(56,189,248,.12);border-color:rgba(56,189,248,.35)}
+    .code-btn:hover{background:rgba(56,189,248,.2)}
   </style>
 </head>
 <body class="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-slate-100">
@@ -40,62 +66,70 @@
   </header>
 
   <!-- HERO -->
-  <section id="top" class="relative overflow-hidden hero-anim">
-    <div class="absolute inset-0 -z-10">
-      <div class="absolute -top-40 -left-32 w-[38rem] h-[38rem] rounded-full bg-blue-500/10 blur-3xl"></div>
-      <div class="absolute -bottom-40 -right-20 w-[36rem] h-[36rem] rounded-full bg-cyan-400/10 blur-3xl"></div>
-    </div>
+  <section id="top" class="relative overflow-hidden hero-anim scanlines">
     <div class="max-w-6xl mx-auto px-6 py-24 md:py-28 text-center">
-      <p class="text-blue-300/80 font-semibold tracking-wide">Software • Cloud • Security</p>
-      <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mt-2">
-        <span class="bg-gradient-to-r from-blue-300 to-cyan-200 bg-clip-text text-transparent">
-          Manaswee Balvant Nadgouda
-        </span>
+      <p class="text-cyan-300/80 font-semibold tracking-wide fade-in">Software • Cloud • Security</p>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mt-2 glow pop">
+        Manaswee Balvant Nadgouda
       </h1>
-      <p class="mt-5 text-lg md:text-xl text-slate-200/90 max-w-3xl mx-auto">
-        New-grad <strong>Software & Cloud Engineer</strong> with a <strong>security-first</strong> mindset. I build
-        reliable APIs and services, design AWS-based architectures, and apply blue-team fundamentals
-        to ship <em>secure, scalable</em> systems.
+      <p class="mt-5 text-lg md:text-xl text-slate-200/90 max-w-3xl mx-auto fade-in">
+        I design and ship <strong>secure, cloud-native software</strong>. My work blends
+        <strong>API engineering</strong>, <strong>AWS architecture</strong>, and <strong>blue-team fundamentals</strong>
+        so products are <em>fast, resilient, and hard to break</em>.
       </p>
 
-      <div class="mt-8 flex flex-wrap justify-center gap-3">
-        <a class="btn bg-gradient-to-r from-blue-500 to-cyan-400 text-slate-900 shadow-md" href="#projects">View Projects</a>
-        <a class="btn bg-white/10 hover:bg-white/20" href="https://www.linkedin.com/in/mnadgoud22/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn bg-white/10 hover:bg-white/20" href="https://github.com/manasweenadgouda22" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn bg-blue-500/20 hover:bg-blue-500/30 border border-blue-400/40 text-blue-200" href="#contact">Hire Me</a>
+      <div class="mt-8 flex flex-wrap justify-center gap-3 fade-in">
+        <a class="btn bg-gradient-to-r from-blue-500 to-cyan-400 text-slate-900 shadow-md" href="#projects">
+          <!-- icon -->
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4 6h16v12H4z"/><path d="M2 8h20M2 16h20" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          View Projects
+        </a>
+        <a class="btn bg-white/10 hover:bg-white/20" target="_blank" rel="noopener" href="https://www.linkedin.com/in/mnadgoud22/">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 102.5 6a2.5 2.5 0 002.48-2.5zM3 8.98h3.96V21H3zM9.5 8.98H13v1.63h.05a3.83 3.83 0 013.45-1.9c3.69 0 4.37 2.43 4.37 5.59V21h-3.96v-4.92c0-1.17-.02-2.66-1.62-2.66-1.62 0-1.87 1.27-1.87 2.58V21H9.5z"/></svg>
+          LinkedIn
+        </a>
+        <a class="btn bg-white/10 hover:bg-white/20" target="_blank" rel="noopener" href="https://github.com/manasweenadgouda22">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 00-3.79 23.38c.6.11.82-.26.82-.58 0-.29-.01-1.05-.02-2.06-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.09-.75.08-.74.08-.74 1.21.09 1.85 1.24 1.85 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.66-.3-5.46-1.33-5.46-5.92 0-1.31.47-2.39 1.24-3.23-.12-.3-.54-1.52.12-3.16 0 0 1.01-.32 3.3 1.23a11.46 11.46 0 016 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.64.24 2.86.12 3.16.77.84 1.24 1.92 1.24 3.23 0 4.6-2.8 5.61-5.47 5.91.43.37.81 1.1.81 2.22 0 1.6-.02 2.9-.02 3.3 0 .32.21.69.83.57A12 12 0 0012 .5z"/></svg>
+          GitHub
+        </a>
+        <a class="btn bg-blue-500/20 hover:bg-blue-500/30 border border-blue-400/40 text-blue-200" href="#contact">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 8v11H3V8l9 5 9-5z"/><path d="M21 6H3l9 5 9-5z"/></svg>
+          Hire Me
+        </a>
       </div>
 
-      <p class="mt-6 text-sm text-slate-300">Open to Full-Time roles (2026): Software Engineering • Cloud Engineering • Security Engineering</p>
+      <p class="mt-6 text-sm text-slate-300 fade-in">Open to Full-Time roles (2026): Software • Cloud • Security</p>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about" class="max-w-6xl mx-auto px-6 py-12">
     <div class="grid md:grid-cols-2 gap-6">
-      <div class="card">
+      <div class="card slide-in">
         <h2 class="text-xl font-bold">About</h2>
         <p class="mt-3 text-slate-300">
-          I bridge <strong>software engineering</strong>, <strong>cloud</strong>, and <strong>security</strong>.
-          My approach: understand the requirement → design simply → instrument & test →
-          harden with security best practices → ship and iterate.
+          I’m a builder who speaks <strong>code, cloud, and security</strong>.
+          I design clean APIs, deploy on AWS with secure defaults, and validate with logs, tests, and threat-aware reviews.
+          My north star: <em>simple, observable, and secure</em>.
         </p>
         <ul class="mt-4 space-y-2 text-slate-300 list-disc list-inside">
-          <li>M.S. Information Technology (Cybersecurity) — Arizona State University</li>
-          <li>Hands-on with AWS (EC2, S3, IAM, CloudWatch), Linux, Docker, CI/CD</li>
-          <li>Security fundamentals: OWASP Top 10, threat modeling, network forensics</li>
+          <li>M.S. Information Technology (Cybersecurity), Arizona State University</li>
+          <li>Hands-on: Python, Java, FastAPI, Docker, Linux, GitHub Actions</li>
+          <li>AWS: EC2, S3, IAM, CloudWatch (least privilege & monitoring first)</li>
+          <li>Blue-team: Zeek, Suricata, Wireshark, basic SIEM workflows</li>
         </ul>
       </div>
-      <div class="card">
-        <h2 class="text-xl font-bold">What I’m Working On</h2>
+      <div class="card pop">
+        <h2 class="text-xl font-bold">Right-Now Focus</h2>
         <ul class="mt-3 space-y-2 text-slate-300 list-disc list-inside">
-          <li>Network forensics lab with Zeek, Suricata & Wireshark</li>
-          <li>Python/Scapy automation for DNS tunneling & steganography detection</li>
-          <li>Security dashboards for log anomaly detection</li>
+          <li>Network-forensics lab with Zeek/Suricata & Python heuristics</li>
+          <li>Security dashboards for anomaly detection</li>
+          <li>Reusable AWS IaC starter with guardrails</li>
         </ul>
         <div class="mt-4 flex flex-wrap gap-2">
           <span class="chip">Python</span><span class="chip">Java</span><span class="chip">FastAPI</span>
           <span class="chip">PostgreSQL</span><span class="chip">Docker</span><span class="chip">Linux</span>
-          <span class="chip">AWS</span><span class="chip">Kubernetes (basics)</span><span class="chip">SIEM</span>
+          <span class="chip">AWS</span><span class="chip">Zeek</span><span class="chip">Suricata</span>
         </div>
       </div>
     </div>
@@ -103,20 +137,11 @@
 
   <!-- SKILLS -->
   <section id="skills" class="max-w-6xl mx-auto px-6 py-6">
-    <h2 class="text-2xl md:text-3xl font-extrabold">Core Skills</h2>
+    <h2 class="text-2xl md:text-3xl font-extrabold fade-in">Core Skills</h2>
     <div class="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <div class="card">
-        <h3 class="font-bold">Software Engineering</h3>
-        <p class="mt-2 text-slate-300">Python, Java, REST APIs, FastAPI • Testing • Clean code • Git</p>
-      </div>
-      <div class="card">
-        <h3 class="font-bold">Cloud & DevOps</h3>
-        <p class="mt-2 text-slate-300">AWS (EC2, S3, IAM, CloudWatch) • Docker • Linux • CI/CD</p>
-      </div>
-      <div class="card">
-        <h3 class="font-bold">Security</h3>
-        <p class="mt-2 text-slate-300">Threat modeling • OWASP Top 10 • Zeek/Suricata • Wireshark • Basic SIEM</p>
-      </div>
+      <div class="card"><h3 class="font-bold">Software Engineering</h3><p class="mt-2 text-slate-300">APIs • FastAPI • Testing • Clean Code • Git</p></div>
+      <div class="card"><h3 class="font-bold">Cloud & DevOps</h3><p class="mt-2 text-slate-300">AWS (EC2, S3, IAM, CloudWatch) • Docker • Linux • CI/CD</p></div>
+      <div class="card"><h3 class="font-bold">Security</h3><p class="mt-2 text-slate-300">Threat Modeling • OWASP • Zeek/Suricata • Wireshark • Basic SIEM</p></div>
     </div>
   </section>
 
@@ -128,114 +153,221 @@
     </div>
 
     <div class="mt-6 grid md:grid-cols-2 gap-6">
-      <!-- Project 1 -->
-      <article class="card">
+      <!-- P1 -->
+      <article class="card slide-in">
         <h3 class="text-xl font-bold">Password Strength Checker</h3>
-        <p class="mt-2 text-slate-300">
-          Security-focused password evaluator with entropy scoring & dictionary checks.
-          FastAPI backend, clean API, and web UI; CI ready.
-        </p>
+        <ul class="mt-3 text-slate-300 list-disc list-inside space-y-1">
+          <li>FastAPI backend with entropy, dictionary & sequence checks</li>
+          <li>Clean REST endpoints + Swagger UI; CLI utility included</li>
+          <li>DevSecOps: pre-commit hooks, basic unit tests, CI ready</li>
+          <li>Lightweight web UI for instant feedback</li>
+          <li>Security-minded scoring with upgrade suggestions</li>
+        </ul>
+        <div class="mt-3 flex gap-3">
+          <a class="btn code-btn" href="https://github.com/manasweenadgouda22/password-strength-checker" target="_blank">Code</a>
+        </div>
         <p class="mt-2 text-sm text-slate-400">FastAPI • Python • DevSecOps</p>
-        <div class="mt-3 flex gap-3">
-          <a class="btn bg-white/10 hover:bg-white/20" href="https://github.com/manasweenadgouda22/password-strength-checker" target="_blank">Code</a>
-        </div>
       </article>
 
-      <!-- Project 2 -->
-      <article class="card">
+      <!-- P2 -->
+      <article class="card pop">
         <h3 class="text-xl font-bold">AI-Email-Chat Forensics</h3>
-        <p class="mt-2 text-slate-300">
-          Exploratory toolkit to analyze email/chat logs for anomalies with Python,
-          TF-IDF and basic classifiers; focuses on metadata correlation and patterns.
-        </p>
-        <p class="mt-2 text-sm text-slate-400">Python • ML • Security Analytics</p>
+        <ul class="mt-3 text-slate-300 list-disc list-inside space-y-1">
+          <li>Parses email/chat logs; normalizes metadata for analysis</li>
+          <li>TF-IDF + classic classifiers for anomaly cues</li>
+          <li>Correlation of sender/time/topic to surface risks</li>
+          <li>Extensible pipeline with modular processors</li>
+          <li>Designed to support SOC workflows & triage views</li>
+        </ul>
         <div class="mt-3 flex gap-3">
-          <a class="btn bg-white/10 hover:bg-white/20" href="https://github.com/manasweenadgouda22/AI-Email-Chat-Forensics" target="_blank">Code</a>
+          <a class="btn code-btn" href="https://github.com/manasweenadgouda22/AI-Email-Chat-Forensics" target="_blank">Code</a>
         </div>
+        <p class="mt-2 text-sm text-slate-400">Python • ML • Security Analytics</p>
       </article>
 
-      <!-- Project 3 -->
-      <article class="card">
+      <!-- P3 -->
+      <article class="card slide-in">
         <h3 class="text-xl font-bold">Network Forensics Lab</h3>
-        <p class="mt-2 text-slate-300">
-          Zeek/Suricata pipelines + Python/Scapy heuristics to flag covert channels
-          (DNS tunneling, steganography). Built in an isolated environment.
-        </p>
+        <ul class="mt-3 text-slate-300 list-disc list-inside space-y-1">
+          <li>Isolated macOS/Linux sandbox with Zeek & Suricata sensors</li>
+          <li>Python/Scapy heuristics for DNS tunneling & stego hints</li>
+          <li>PCAP workflows + Wireshark verification</li>
+          <li>Report templates aligned with NIST 800-86</li>
+          <li>Focus on reducing MTTD/MTTA via scripted checks</li>
+        </ul>
+        <div class="mt-3 flex gap-3">
+          <a class="btn code-btn" href="https://github.com/manasweenadgouda22?tab=repositories" target="_blank">Code</a>
+        </div>
         <p class="mt-2 text-sm text-slate-400">Zeek • Suricata • Wireshark • Scapy</p>
       </article>
 
-      <!-- Project 4 -->
-      <article class="card">
+      <!-- P4 -->
+      <article class="card pop">
         <h3 class="text-xl font-bold">Cloud Monitoring Starter</h3>
-        <p class="mt-2 text-slate-300">
-          Minimal AWS stack (EC2 + CloudWatch) with basic alarms and logs;
-          emphasizes secure defaults and least-privilege IAM.
-        </p>
+        <ul class="mt-3 text-slate-300 list-disc list-inside space-y-1">
+          <li>AWS EC2 + CloudWatch with alarms and log retention</li>
+          <li>Least-privilege IAM roles/policies as defaults</li>
+          <li>Troubleshooting playbook & runbooks</li>
+          <li>Audit-friendly tagging + cost visibility</li>
+          <li>Extensible to containers and managed services</li>
+        </ul>
+        <div class="mt-3 flex gap-3">
+          <a class="btn code-btn" href="https://github.com/manasweenadgouda22?tab=repositories" target="_blank">Code</a>
+        </div>
         <p class="mt-2 text-sm text-slate-400">AWS • IAM • CloudWatch</p>
+      </article>
+
+      <!-- P5 -->
+      <article class="card slide-in">
+        <h3 class="text-xl font-bold">Secure API Starter (FastAPI)</h3>
+        <ul class="mt-3 text-slate-300 list-disc list-inside space-y-1">
+          <li>Opinionated FastAPI skeleton with auth & rate-limit hooks</li>
+          <li>Health/metrics endpoints, structured logging</li>
+          <li>CORS & input validation hardened by default</li>
+          <li>Dockerized dev + GitHub Actions template</li>
+          <li>Ready for Render/Fly.io/EC2 deployments</li>
+        </ul>
+        <div class="mt-3 flex gap-3">
+          <a class="btn code-btn" href="https://github.com/manasweenadgouda22?tab=repositories" target="_blank">Code</a>
+        </div>
+        <p class="mt-2 text-sm text-slate-400">FastAPI • Docker • CI/CD</p>
       </article>
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
+  <!-- EXPERIENCE (slider) -->
   <section id="experience" class="max-w-6xl mx-auto px-6 py-12">
     <h2 class="text-2xl md:text-3xl font-extrabold">Experience</h2>
-    <div class="mt-6 grid md:grid-cols-2 gap-6">
-      <div class="card">
-        <h3 class="font-bold">Student Web Developer — Arizona State University</h3>
-        <p class="text-slate-400 text-sm">Sep 2025 – Present</p>
-        <ul class="mt-2 text-slate-300 list-disc list-inside space-y-1">
-          <li>Maintained accessible pages in ASU’s Drupal distribution (Unity Design System).</li>
-          <li>Performed audits with Siteimprove; coordinated fixes with stakeholders.</li>
-        </ul>
+    <div class="mt-4 slider glass rounded-2xl p-2">
+      <div id="expTrack" class="track">
+        <!-- Slide 1 -->
+        <div class="slide p-4">
+          <div class="card">
+            <div class="flex items-center gap-3">
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5h18v14H3z"/><path d="M3 9h18M8 5v14" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+              <h3 class="font-bold">Student Web Developer — Arizona State University</h3>
+            </div>
+            <p class="text-slate-400 text-sm">Sep 2025 – Present</p>
+            <ul class="mt-2 text-slate-300 list-disc list-inside space-y-1">
+              <li>Built accessible components within ASU’s Drupal (Unity Design System)</li>
+              <li>Siteimprove audits; coordinated fixes with stakeholders</li>
+              <li>Version control discipline and PR reviews</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide p-4">
+          <div class="card">
+            <div class="flex items-center gap-3">
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v16H4z"/><path d="M7 8h10M7 12h10M7 16h6" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+              <h3 class="font-bold">Software Engineer Intern — Escape™ App</h3>
+            </div>
+            <p class="text-slate-400 text-sm">Jun 2025 – Present</p>
+            <ul class="mt-2 text-slate-300 list-disc list-inside space-y-1">
+              <li>Manual + automated testing across web and cloud services</li>
+              <li>Authored test plans/cases; tracked defects in Jira/Trello</li>
+              <li>Supported CI pipelines and basic release validation</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="slide p-4">
+          <div class="card">
+            <div class="flex items-center gap-3">
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+              <h3 class="font-bold">Software Engineer — Cambium Networks</h3>
+            </div>
+            <p class="text-slate-400 text-sm">Aug 2022 – Jun 2024</p>
+            <ul class="mt-2 text-slate-300 list-disc list-inside space-y-1">
+              <li>Automation for 10+ features; improved reliability & coverage</li>
+              <li>Wrote unit/integration tests; participated in code reviews</li>
+              <li>Cross-team collaboration to deliver stable releases</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="slide p-4">
+          <div class="card">
+            <div class="flex items-center gap-3">
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4 7h16v10H4z"/><path d="M4 9h16M8 7v10" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+              <h3 class="font-bold">Software Engineer Intern — Wipro</h3>
+            </div>
+            <p class="text-slate-400 text-sm">Mar 2022 – May 2022</p>
+            <ul class="mt-2 text-slate-300 list-disc list-inside space-y-1">
+              <li>Java backend enhancements and deployment support</li>
+              <li>Frontend integration improvements for better UX</li>
+              <li>Documentation and test coverage for new modules</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h3 class="font-bold">Software Engineer Intern — Escape™ App</h3>
-        <p class="text-slate-400 text-sm">Jun 2025 – Present</p>
-        <ul class="mt-2 text-slate-300 list-disc list-inside space-y-1">
-          <li>Manual + automated testing across web and cloud; authored test plans & cases.</li>
-          <li>Tracked defects in Jira/Trello; supported CI pipelines.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3 class="font-bold">Software Engineer — Cambium Networks</h3>
-        <p class="text-slate-400 text-sm">Aug 2022 – Jun 2024</p>
-        <ul class="mt-2 text-slate-300 list-disc list-inside space-y-1">
-          <li>Automation for 10+ features; improved reliability and raised coverage.</li>
-          <li>Collaborated across teams to deliver stable releases.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3 class="font-bold">Software Engineer Intern — Wipro</h3>
-        <p class="text-slate-400 text-sm">Mar 2022 – May 2022</p>
-        <ul class="mt-2 text-slate-300 list-disc list-inside space-y-1">
-          <li>Java backend enhancements; testing & deployment support.</li>
-          <li>Frontend integration improvements for better UX.</li>
-        </ul>
+      <div class="flex items-center justify-between px-2 pt-2">
+        <button id="prev" class="btn bg-white/10">◀ Prev</button>
+        <button id="next" class="btn bg-white/10">Next ▶</button>
       </div>
     </div>
   </section>
 
-  <!-- CERTIFICATIONS -->
+  <!-- CERTIFICATIONS (flip cards) -->
   <section id="certs" class="max-w-6xl mx-auto px-6 py-12">
     <h2 class="text-2xl md:text-3xl font-extrabold">Certifications</h2>
-    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <div class="card"><h3 class="font-bold">ISC2 Certified in Cybersecurity</h3><p class="text-slate-300 mt-1">Issued 2025</p></div>
-      <div class="card"><h3 class="font-bold">AWS Academy Cloud Architecting</h3><p class="text-slate-300 mt-1">Issued 2025</p></div>
-      <div class="card"><h3 class="font-bold">CompTIA Security+ (in-progress)</h3></div>
-      <div class="card"><h3 class="font-bold">AWS Solutions Architect – Associate (in-progress)</h3></div>
+    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="flip">
+        <div class="flip-inner card">
+          <div class="flip-face flex flex-col justify-center items-center">
+            <h3 class="font-bold">ISC2 Certified in Cybersecurity</h3>
+            <p class="text-slate-400 mt-1">Issued 2025</p>
+          </div>
+          <div class="flip-face flip-back flex flex-col justify-center items-center">
+            <p class="text-slate-300">Foundational security domains: threats, network, access control, security ops.</p>
+          </div>
+        </div>
+      </div>
+      <div class="flip">
+        <div class="flip-inner card">
+          <div class="flip-face flex flex-col justify-center items-center">
+            <h3 class="font-bold">AWS Academy Cloud Architecting</h3>
+            <p class="text-slate-400 mt-1">Issued 2025</p>
+          </div>
+          <div class="flip-face flip-back flex flex-col justify-center items-center">
+            <p class="text-slate-300">Designed and evaluated architectures with EC2, S3, IAM, CloudWatch.</p>
+          </div>
+        </div>
+      </div>
+      <div class="flip">
+        <div class="flip-inner card">
+          <div class="flip-face flex flex-col justify-center items-center">
+            <h3 class="font-bold">CompTIA Security+</h3>
+            <p class="text-slate-400 mt-1">In progress</p>
+          </div>
+          <div class="flip-face flip-back flex flex-col justify-center items-center">
+            <p class="text-slate-300">Risk mgmt, incident response, cryptography, secure design.</p>
+          </div>
+        </div>
+      </div>
+      <div class="flip">
+        <div class="flip-inner card">
+          <div class="flip-face flex flex-col justify-center items-center">
+            <h3 class="font-bold">AWS SAA-C03</h3>
+            <p class="text-slate-400 mt-1">In progress</p>
+          </div>
+          <div class="flip-face flip-back flex flex-col justify-center items-center">
+            <p class="text-slate-300">Highly available, cost-optimized, secure solutions on AWS.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact" class="max-w-6xl mx-auto px-6 py-16">
-    <div class="card">
+    <div class="card fade-in">
       <div class="md:flex items-center justify-between gap-6">
         <div class="max-w-2xl">
           <h2 class="text-2xl md:text-3xl font-extrabold">Let’s build something secure & scalable ⚡</h2>
           <p class="mt-2 text-slate-300">
-            I’m actively seeking full-time roles across <strong>Software Engineering</strong>,
-            <strong>Cloud</strong>, and <strong>Security</strong>. Happy to share a resume, code samples,
-            and discuss how I can add value to your team.
+            I’m actively seeking roles across <strong>Software</strong>, <strong>Cloud</strong>, and <strong>Security</strong>.
+            Happy to share a resume, code samples, and walk through my projects live.
           </p>
         </div>
         <div class="mt-4 md:mt-0 flex flex-wrap gap-3">
@@ -246,9 +378,25 @@
         </div>
       </div>
     </div>
-    <p class="text-center text-xs text-slate-500 mt-6">© <span id="y"></span> Manaswee Balvant Nadgouda • Built with Tailwind • Deployed on GitHub Pages</p>
+    <p class="text-center text-xs text-slate-500 mt-6">© <span id="y"></span> Manaswee Balvant Nadgouda • Tailwind • GitHub Pages</p>
   </section>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Simple experience slider
+    (function(){
+      const track = document.getElementById('expTrack');
+      const slides = track.querySelectorAll('.slide').length;
+      let idx = 0;
+      const go = (d) => {
+        idx = (idx + d + slides) % slides;
+        track.style.transform = `translateX(-${idx*100}%)`;
+      };
+      document.getElementById('prev').addEventListener('click', ()=>go(-1));
+      document.getElementById('next').addEventListener('click', ()=>go(1));
+    })();
+  </script>
 </body>
 </html>
