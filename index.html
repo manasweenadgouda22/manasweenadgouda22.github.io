@@ -1,158 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Manaswee Balvant Nadgouda — Cloud • Security • Software</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manaswee Balvant Nadgouda — Software • Cloud • Security</title>
+  <meta name="description" content="Portfolio of Manaswee Balvant Nadgouda — new-grad Software & Cloud Engineer with a security-first mindset. Projects in Python, AWS, and cybersecurity." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      background: radial-gradient(circle at 50% 50%, #000000, #011b0c);
-      color: #e6fdf4;
-      font-family: 'Poppins', sans-serif;
-      overflow-x: hidden;
-    }
-    .hero {
-      background-image: url('assets/hero-bg.png');
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(0,255,195,0.25), rgba(0,255,150,0.05));
-      transition: background 0.5s ease;
-      z-index: 0;
-    }
-    .section {
-      scroll-margin-top: 80px;
-      padding: 4rem 0;
-      animation: fadeIn 1s ease;
-    }
-    @keyframes fadeIn { 
-      from {opacity: 0; transform: translateY(20px);} 
-      to {opacity: 1; transform: translateY(0);} 
-    }
-    .btn { transition: all 0.3s ease; }
-    .btn:hover { transform: scale(1.05); box-shadow: 0 0 12px #00ffc3; }
-    
-    /* glowing particle overlay */
-    .glow {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(0,255,195,0.2), transparent 60%);
-      pointer-events: none;
-      transition: background 0.1s ease;
-      z-index: 1;
-    }
+    :root { --glass: rgba(255,255,255,0.06); }
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+    .glass { background: var(--glass); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
+    .chip { padding: 4px 10px; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.05); }
+    .card { background: var(--glass); border-radius: 1rem; padding: 1.25rem; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.08); }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.35); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 0.75rem; padding: 0.6rem 1rem; font-weight: 700; border: 1px solid rgba(255,255,255,0.12); transition: transform 0.2s ease, background 0.3s ease, border-color 0.3s ease; }
+    .btn:hover { transform: translateY(-1px); border-color: rgba(255,255,255,0.25); }
+    @keyframes gradientShift { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+    .hero-anim { background: linear-gradient(120deg,#0b1b4a,#1e3a8a,#4338ca,#0f172a); background-size: 400% 400%; animation: gradientShift 12s ease-in-out infinite; }
   </style>
 </head>
-<body>
+<body class="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-slate-100">
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 bg-slate-950/70 backdrop-blur border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#top" class="font-extrabold tracking-tight text-lg md:text-xl">Manaswee Nadgouda</a>
+      <nav class="hidden md:flex gap-6 text-sm text-slate-300">
+        <a class="hover:text-white" href="#about">About</a>
+        <a class="hover:text-white" href="#skills">Skills</a>
+        <a class="hover:text-white" href="#projects">Projects</a>
+        <a class="hover:text-white" href="#experience">Experience</a>
+        <a class="hover:text-white" href="#certs">Certifications</a>
+        <a class="hover:text-white" href="#contact">Contact</a>
+      </nav>
+      <a href="#contact" class="btn bg-white/10">Hire me</a>
+    </div>
+  </header>
 
   <!-- HERO -->
-  <section class="hero text-center py-20 relative overflow-hidden" id="hero">
-    <div class="glow"></div>
-    <img src="assets/profile-photo.png" alt="avatar"
-      class="mx-auto w-40 h-40 rounded-full shadow-lg border-2 border-emerald-400 relative z-10" />
-    <h1 class="text-4xl font-bold mt-6 text-emerald-300 relative z-10">Manaswee Balvant Nadgouda</h1>
-    <p class="text-lg text-emerald-200 mt-3 relative z-10">
-      Building tomorrow's cloud & security solutions. I design resilient software and secure systems with Python, AWS, and Kubernetes — bridging development, operations, and cyber defense.
-    </p>
-    <div class="flex flex-wrap justify-center gap-4 mt-6 relative z-10">
-      <a href="#projects" class="btn bg-emerald-500 text-black px-4 py-2 rounded-lg font-semibold">View Projects</a>
-      <a href="https://www.linkedin.com/in/mnadgoud22/" target="_blank" class="btn border border-emerald-300 px-4 py-2 rounded-lg font-semibold">LinkedIn</a>
-      <a href="https://github.com/manasweenadgouda22" target="_blank" class="btn border border-emerald-300 px-4 py-2 rounded-lg font-semibold">GitHub</a>
-      <a href="#contact" class="btn border border-emerald-300 px-4 py-2 rounded-lg font-semibold">Contact</a>
-      <a href="assets/Manaswee Balvant Nadgouda Resume1.pdf" target="_blank" class="btn bg-emerald-400 text-black px-4 py-2 rounded-lg font-semibold">Download Resume</a>
+  <section id="top" class="relative overflow-hidden hero-anim">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute -top-40 -left-32 w-[38rem] h-[38rem] rounded-full bg-blue-500/10 blur-3xl"></div>
+      <div class="absolute -bottom-40 -right-20 w-[36rem] h-[36rem] rounded-full bg-cyan-400/10 blur-3xl"></div>
+    </div>
+    <div class="max-w-6xl mx-auto px-6 py-24 md:py-28 text-center">
+      <p class="text-blue-300/80 font-semibold tracking-wide">Software • Cloud • Security</p>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mt-2">
+        <span class="bg-gradient-to-r from-blue-300 to-cyan-200 bg-clip-text text-transparent">
+          Manaswee Balvant Nadgouda
+        </span>
+      </h1>
+      <p class="mt-5 text-lg md:text-xl text-slate-200/90 max-w-3xl mx-auto">
+        New-grad <strong>Software & Cloud Engineer</strong> with a <strong>security-first</strong> mindset. I build
+        reliable APIs and services, design AWS-based architectures, and apply blue-team fundamentals
+        to ship <em>secure, scalable</em> systems.
+      </p>
+
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a class="btn bg-gradient-to-r from-blue-500 to-cyan-400 text-slate-900 shadow-md" href="#projects">View Projects</a>
+        <a class="btn bg-white/10 hover:bg-white/20" href="https://www.linkedin.com/in/mnadgoud22/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn bg-white/10 hover:bg-white/20" href="https://github.com/manasweenadgouda22" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn bg-blue-500/20 hover:bg-blue-500/30 border border-blue-400/40 text-blue-200" href="#contact">Hire Me</a>
+      </div>
+
+      <p class="mt-6 text-sm text-slate-300">Open to Full-Time roles (2026): Software Engineering • Cloud Engineering • Security Engineering</p>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="section text-center">
-    <h2 class="text-3xl font-bold text-emerald-300 mb-4">About</h2>
-    <p class="max-w-3xl mx-auto text-emerald-100">
-      I’m a New-Grad Software & Cloud Engineer with a security-first mindset — blending software engineering, cloud automation, and defensive cybersecurity practices.  
-      Skilled in Python, AWS, and Kubernetes, I build secure, scalable systems that balance innovation and protection. My work bridges DevOps and Blue-Team fundamentals to create resilient digital ecosystems.
-    </p>
+  <section id="about" class="max-w-6xl mx-auto px-6 py-12">
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="card">
+        <h2 class="text-xl font-bold">About</h2>
+        <p class="mt-3 text-slate-300">
+          I bridge <strong>software engineering</strong>, <strong>cloud</strong>, and <strong>security</strong>.
+          My approach: understand the requirement → design simply → instrument & test →
+          harden with security best practices → ship and iterate.
+        </p>
+        <ul class="mt-4 space-y-2 text-slate-300 list-disc list-inside">
+          <li>M.S. Information Technology (Cybersecurity) — Arizona State University</li>
+          <li>Hands-on with AWS (EC2, S3, IAM, CloudWatch), Linux, Docker, CI/CD</li>
+          <li>Security fundamentals: OWASP Top 10, threat modeling, network forensics</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2 class="text-xl font-bold">What I’m Working On</h2>
+        <ul class="mt-3 space-y-2 text-slate-300 list-disc list-inside">
+          <li>Network forensics lab with Zeek, Suricata & Wireshark</li>
+          <li>Python/Scapy automation for DNS tunneling & steganography detection</li>
+          <li>Security dashboards for log anomaly detection</li>
+        </ul>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="chip">Python</span><span class="chip">Java</span><span class="chip">FastAPI</span>
+          <span class="chip">PostgreSQL</span><span class="chip">Docker</span><span class="chip">Linux</span>
+          <span class="chip">AWS</span><span class="chip">Kubernetes (basics)</span><span class="chip">SIEM</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="max-w-6xl mx-auto px-6 py-6">
+    <h2 class="text-2xl md:text-3xl font-extrabold">Core Skills</h2>
+    <div class="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="card">
+        <h3 class="font-bold">Software Engineering</h3>
+        <p class="mt-2 text-slate-300">Python, Java, REST APIs, FastAPI • Testing • Clean code • Git</p>
+      </div>
+      <div class="card">
+        <h3 class="font-bold">Cloud & DevOps</h3>
+        <p class="mt-2 text-slate-300">AWS (EC2, S3, IAM, CloudWatch) • Docker • Linux • CI/CD</p>
+      </div>
+      <div class="card">
+        <h3 class="font-bold">Security</h3>
+        <p class="mt-2 text-slate-300">Threat modeling • OWASP Top 10 • Zeek/Suricata • Wireshark • Basic SIEM</p>
+      </div>
+    </div>
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects" class="section bg-[#02170c]/70">
-    <h2 class="text-3xl font-bold text-center text-emerald-300 mb-10">Projects</h2>
-    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-      <div class="p-6 bg-black/30 rounded-xl hover:shadow-emerald-400/50 transition">
-        <h3 class="text-xl font-semibold text-emerald-300 mb-2">Password Strength Checker</h3>
-        <ul class="list-disc list-inside text-emerald-100 text-sm space-y-1">
-          <li>FastAPI backend for entropy & policy validation.</li>
-          <li>Real-time scoring + CI/CD integration.</li>
-          <li>Hosted on AWS EC2 with HTTPS enforcement.</li>
-          <li><a href="https://github.com/manasweenadgouda22/password-strength-checker" target="_blank" class="text-emerald-400 underline">GitHub Repo</a></li>
+  <section id="projects" class="max-w-6xl mx-auto px-6 py-12">
+    <div class="flex items-end justify-between">
+      <h2 class="text-2xl md:text-3xl font-extrabold">Projects</h2>
+      <a class="text-sm text-blue-300 hover:text-blue-200" href="https://github.com/manasweenadgouda22?tab=repositories" target="_blank">All repositories →</a>
+    </div>
+
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+      <!-- Project 1 -->
+      <article class="card">
+        <h3 class="text-xl font-bold">Password Strength Checker</h3>
+        <p class="mt-2 text-slate-300">
+          Security-focused password evaluator with entropy scoring & dictionary checks.
+          FastAPI backend, clean API, and web UI; CI ready.
+        </p>
+        <p class="mt-2 text-sm text-slate-400">FastAPI • Python • DevSecOps</p>
+        <div class="mt-3 flex gap-3">
+          <a class="btn bg-white/10 hover:bg-white/20" href="https://github.com/manasweenadgouda22/password-strength-checker" target="_blank">Code</a>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="card">
+        <h3 class="text-xl font-bold">AI-Email-Chat Forensics</h3>
+        <p class="mt-2 text-slate-300">
+          Exploratory toolkit to analyze email/chat logs for anomalies with Python,
+          TF-IDF and basic classifiers; focuses on metadata correlation and patterns.
+        </p>
+        <p class="mt-2 text-sm text-slate-400">Python • ML • Security Analytics</p>
+        <div class="mt-3 flex gap-3">
+          <a class="btn bg-white/10 hover:bg-white/20" href="https://github.com/manasweenadgouda22/AI-Email-Chat-Forensics" target="_blank">Code</a>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="card">
+        <h3 class="text-xl font-bold">Network Forensics Lab</h3>
+        <p class="mt-2 text-slate-300">
+          Zeek/Suricata pipelines + Python/Scapy heuristics to flag covert channels
+          (DNS tunneling, steganography). Built in an isolated environment.
+        </p>
+        <p class="mt-2 text-sm text-slate-400">Zeek • Suricata • Wireshark • Scapy</p>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="card">
+        <h3 class="text-xl font-bold">Cloud Monitoring Starter</h3>
+        <p class="mt-2 text-slate-300">
+          Minimal AWS stack (EC2 + CloudWatch) with basic alarms and logs;
+          emphasizes secure defaults and least-privilege IAM.
+        </p>
+        <p class="mt-2 text-sm text-slate-400">AWS • IAM • CloudWatch</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-2xl md:text-3xl font-extrabold">Experience</h2>
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+      <div class="card">
+        <h3 class="font-bold">Student Web Developer — Arizona State University</h3>
+        <p class="text-slate-400 text-sm">Sep 2025 – Present</p>
+        <ul class="mt-2 text-slate-300 list-disc list-inside space-y-1">
+          <li>Maintained accessible pages in ASU’s Drupal distribution (Unity Design System).</li>
+          <li>Performed audits with Siteimprove; coordinated fixes with stakeholders.</li>
         </ul>
       </div>
-
-      <div class="p-6 bg-black/30 rounded-xl hover:shadow-emerald-400/50 transition">
-        <h3 class="text-xl font-semibold text-emerald-300 mb-2">Network Forensics Lab</h3>
-        <ul class="list-disc list-inside text-emerald-100 text-sm space-y-1">
-          <li>Configured Zeek & Suricata for packet inspection.</li>
-          <li>Automated PCAP ingestion with Python.</li>
-          <li>ELK dashboards for traffic visualization.</li>
-          <li><a href="https://github.com/manasweenadgouda22" target="_blank" class="text-emerald-400 underline">GitHub Repo</a></li>
+      <div class="card">
+        <h3 class="font-bold">Software Engineer Intern — Escape™ App</h3>
+        <p class="text-slate-400 text-sm">Jun 2025 – Present</p>
+        <ul class="mt-2 text-slate-300 list-disc list-inside space-y-1">
+          <li>Manual + automated testing across web and cloud; authored test plans & cases.</li>
+          <li>Tracked defects in Jira/Trello; supported CI pipelines.</li>
         </ul>
       </div>
-
-      <div class="p-6 bg-black/30 rounded-xl hover:shadow-emerald-400/50 transition">
-        <h3 class="text-xl font-semibold text-emerald-300 mb-2">Threat Detection Scripts</h3>
-        <ul class="list-disc list-inside text-emerald-100 text-sm space-y-1">
-          <li>Python CLI for DNS tunneling detection.</li>
-          <li>Async I/O and SIEM integration.</li>
-          <li><a href="https://github.com/manasweenadgouda22" target="_blank" class="text-emerald-400 underline">GitHub Repo</a></li>
+      <div class="card">
+        <h3 class="font-bold">Software Engineer — Cambium Networks</h3>
+        <p class="text-slate-400 text-sm">Aug 2022 – Jun 2024</p>
+        <ul class="mt-2 text-slate-300 list-disc list-inside space-y-1">
+          <li>Automation for 10+ features; improved reliability and raised coverage.</li>
+          <li>Collaborated across teams to deliver stable releases.</li>
         </ul>
       </div>
-
-      <div class="p-6 bg-black/30 rounded-xl hover:shadow-emerald-400/50 transition">
-        <h3 class="text-xl font-semibold text-emerald-300 mb-2">Cloud Deployment Dashboard</h3>
-        <ul class="list-disc list-inside text-emerald-100 text-sm space-y-1">
-          <li>Serverless AWS backend with Lambda + DynamoDB.</li>
-          <li>Dash-based UI for resource tracking.</li>
-          <li><a href="https://github.com/manasweenadgouda22" target="_blank" class="text-emerald-400 underline">GitHub Repo</a></li>
-        </ul>
-      </div>
-
-      <div class="p-6 bg-black/30 rounded-xl hover:shadow-emerald-400/50 transition">
-        <h3 class="text-xl font-semibold text-emerald-300 mb-2">AI Email & Chat Forensics</h3>
-        <ul class="list-disc list-inside text-emerald-100 text-sm space-y-1">
-          <li>Streamlit dashboard for metadata correlation.</li>
-          <li>TF-IDF + ML model for spam/phishing detection.</li>
-          <li><a href="https://github.com/manasweenadgouda22/AI-Email-Chat-Forensics" target="_blank" class="text-emerald-400 underline">GitHub Repo</a></li>
+      <div class="card">
+        <h3 class="font-bold">Software Engineer Intern — Wipro</h3>
+        <p class="text-slate-400 text-sm">Mar 2022 – May 2022</p>
+        <ul class="mt-2 text-slate-300 list-disc list-inside space-y-1">
+          <li>Java backend enhancements; testing & deployment support.</li>
+          <li>Frontend integration improvements for better UX.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section text-center">
-    <h2 class="text-3xl font-bold text-emerald-300 mb-4">Contact</h2>
-    <p class="text-emerald-100">Let’s connect — I’m open to collaborations, full-time opportunities, and security research.</p>
-    <p class="mt-2 text-emerald-300 font-medium">manaswee.nadgouda22@gmail.com</p>
+  <!-- CERTIFICATIONS -->
+  <section id="certs" class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-2xl md:text-3xl font-extrabold">Certifications</h2>
+    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="card"><h3 class="font-bold">ISC2 Certified in Cybersecurity</h3><p class="text-slate-300 mt-1">Issued 2025</p></div>
+      <div class="card"><h3 class="font-bold">AWS Academy Cloud Architecting</h3><p class="text-slate-300 mt-1">Issued 2025</p></div>
+      <div class="card"><h3 class="font-bold">CompTIA Security+ (in-progress)</h3></div>
+      <div class="card"><h3 class="font-bold">AWS Solutions Architect – Associate (in-progress)</h3></div>
+    </div>
   </section>
 
-  <!-- CURSOR REACTIVE JS -->
-  <script>
-    const hero = document.querySelector('.hero');
-    const glow = document.querySelector('.glow');
-    hero.addEventListener('mousemove', e => {
-      const x = (e.clientX / window.innerWidth) * 100;
-      const y = (e.clientY / window.innerHeight) * 100;
-      glow.style.setProperty('--x', `${x}%`);
-      glow.style.setProperty('--y', `${y}%`);
-    });
-  </script>
+  <!-- CONTACT -->
+  <section id="contact" class="max-w-6xl mx-auto px-6 py-16">
+    <div class="card">
+      <div class="md:flex items-center justify-between gap-6">
+        <div class="max-w-2xl">
+          <h2 class="text-2xl md:text-3xl font-extrabold">Let’s build something secure & scalable ⚡</h2>
+          <p class="mt-2 text-slate-300">
+            I’m actively seeking full-time roles across <strong>Software Engineering</strong>,
+            <strong>Cloud</strong>, and <strong>Security</strong>. Happy to share a resume, code samples,
+            and discuss how I can add value to your team.
+          </p>
+        </div>
+        <div class="mt-4 md:mt-0 flex flex-wrap gap-3">
+          <a class="btn bg-gradient-to-r from-blue-500 to-cyan-400 text-slate-900" href="mailto:manaswee.nadgouda22@gmail.com">Email</a>
+          <a class="btn bg-white/10 hover:bg-white/20" href="https://www.linkedin.com/in/mnadgoud22/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn bg-white/10 hover:bg-white/20" href="https://github.com/manasweenadgouda22" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="#top">Back to top</a>
+        </div>
+      </div>
+    </div>
+    <p class="text-center text-xs text-slate-500 mt-6">© <span id="y"></span> Manaswee Balvant Nadgouda • Built with Tailwind • Deployed on GitHub Pages</p>
+  </section>
 
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
