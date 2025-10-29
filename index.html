@@ -10,18 +10,21 @@
       background: radial-gradient(circle at 50% 50%, #000000, #011b0c);
       color: #e6fdf4;
       font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
     }
     .hero {
       background-image: url('assets/hero-bg.png');
       background-size: cover;
       background-position: center;
       position: relative;
+      overflow: hidden;
     }
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
       background: linear-gradient(135deg, rgba(0,255,195,0.25), rgba(0,255,150,0.05));
+      transition: background 0.5s ease;
       z-index: 0;
     }
     .section {
@@ -29,15 +32,32 @@
       padding: 4rem 0;
       animation: fadeIn 1s ease;
     }
-    @keyframes fadeIn { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes fadeIn { 
+      from {opacity: 0; transform: translateY(20px);} 
+      to {opacity: 1; transform: translateY(0);} 
+    }
     .btn { transition: all 0.3s ease; }
     .btn:hover { transform: scale(1.05); box-shadow: 0 0 12px #00ffc3; }
+    
+    /* glowing particle overlay */
+    .glow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(0,255,195,0.2), transparent 60%);
+      pointer-events: none;
+      transition: background 0.1s ease;
+      z-index: 1;
+    }
   </style>
 </head>
 <body>
 
   <!-- HERO -->
-  <section class="hero text-center py-20 relative overflow-hidden">
+  <section class="hero text-center py-20 relative overflow-hidden" id="hero">
+    <div class="glow"></div>
     <img src="assets/profile-photo.png" alt="avatar"
       class="mx-auto w-40 h-40 rounded-full shadow-lg border-2 border-emerald-400 relative z-10" />
     <h1 class="text-4xl font-bold mt-6 text-emerald-300 relative z-10">Manaswee Balvant Nadgouda</h1>
@@ -66,14 +86,12 @@
   <section id="projects" class="section bg-[#02170c]/70">
     <h2 class="text-3xl font-bold text-center text-emerald-300 mb-10">Projects</h2>
     <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-
       <div class="p-6 bg-black/30 rounded-xl hover:shadow-emerald-400/50 transition">
         <h3 class="text-xl font-semibold text-emerald-300 mb-2">Password Strength Checker</h3>
         <ul class="list-disc list-inside text-emerald-100 text-sm space-y-1">
-          <li>Developed a FastAPI backend for entropy and policy validation.</li>
-          <li>Built live analyzer for real-time password scoring.</li>
-          <li>CI/CD automation with GitHub Actions & pytest.</li>
-          <li>Deployed securely on AWS EC2 with HTTPS enforcement.</li>
+          <li>FastAPI backend for entropy & policy validation.</li>
+          <li>Real-time scoring + CI/CD integration.</li>
+          <li>Hosted on AWS EC2 with HTTPS enforcement.</li>
           <li><a href="https://github.com/manasweenadgouda22/password-strength-checker" target="_blank" class="text-emerald-400 underline">GitHub Repo</a></li>
         </ul>
       </div>
@@ -81,10 +99,9 @@
       <div class="p-6 bg-black/30 rounded-xl hover:shadow-emerald-400/50 transition">
         <h3 class="text-xl font-semibold text-emerald-300 mb-2">Network Forensics Lab</h3>
         <ul class="list-disc list-inside text-emerald-100 text-sm space-y-1">
-          <li>Configured Zeek & Suricata for advanced packet inspection.</li>
-          <li>Automated PCAP parsing via Python + Pandas.</li>
-          <li>Deployed ELK dashboards for anomaly visualization.</li>
-          <li>Implemented NIST 800-86 evidence chain compliance.</li>
+          <li>Configured Zeek & Suricata for packet inspection.</li>
+          <li>Automated PCAP ingestion with Python.</li>
+          <li>ELK dashboards for traffic visualization.</li>
           <li><a href="https://github.com/manasweenadgouda22" target="_blank" class="text-emerald-400 underline">GitHub Repo</a></li>
         </ul>
       </div>
@@ -92,10 +109,8 @@
       <div class="p-6 bg-black/30 rounded-xl hover:shadow-emerald-400/50 transition">
         <h3 class="text-xl font-semibold text-emerald-300 mb-2">Threat Detection Scripts</h3>
         <ul class="list-disc list-inside text-emerald-100 text-sm space-y-1">
-          <li>Python CLI for DNS tunneling & steganography detection.</li>
-          <li>Async I/O for real-time log correlation and alerts.</li>
-          <li>Extensible argparse-based plugin architecture.</li>
-          <li>Integrated SIEM outputs for rule validation.</li>
+          <li>Python CLI for DNS tunneling detection.</li>
+          <li>Async I/O and SIEM integration.</li>
           <li><a href="https://github.com/manasweenadgouda22" target="_blank" class="text-emerald-400 underline">GitHub Repo</a></li>
         </ul>
       </div>
@@ -103,10 +118,8 @@
       <div class="p-6 bg-black/30 rounded-xl hover:shadow-emerald-400/50 transition">
         <h3 class="text-xl font-semibold text-emerald-300 mb-2">Cloud Deployment Dashboard</h3>
         <ul class="list-disc list-inside text-emerald-100 text-sm space-y-1">
-          <li>Built AWS Lambda backend with DynamoDB & CloudWatch APIs.</li>
-          <li>Visualized deployments with Plotly Dash + Flask UI.</li>
-          <li>Implemented IAM least-privilege policies.</li>
-          <li>Added predictive analytics for scaling insights.</li>
+          <li>Serverless AWS backend with Lambda + DynamoDB.</li>
+          <li>Dash-based UI for resource tracking.</li>
           <li><a href="https://github.com/manasweenadgouda22" target="_blank" class="text-emerald-400 underline">GitHub Repo</a></li>
         </ul>
       </div>
@@ -114,42 +127,32 @@
       <div class="p-6 bg-black/30 rounded-xl hover:shadow-emerald-400/50 transition">
         <h3 class="text-xl font-semibold text-emerald-300 mb-2">AI Email & Chat Forensics</h3>
         <ul class="list-disc list-inside text-emerald-100 text-sm space-y-1">
-          <li>Streamlit dashboard correlating chat metadata + activity.</li>
-          <li>TF-IDF + Logistic Regression for phishing/spam detection.</li>
-          <li>SQLite storage with query interface for investigators.</li>
-          <li>Timeline visualization via Seaborn + Matplotlib.</li>
+          <li>Streamlit dashboard for metadata correlation.</li>
+          <li>TF-IDF + ML model for spam/phishing detection.</li>
           <li><a href="https://github.com/manasweenadgouda22/AI-Email-Chat-Forensics" target="_blank" class="text-emerald-400 underline">GitHub Repo</a></li>
         </ul>
       </div>
-
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience" class="section text-center">
-    <h2 class="text-3xl font-bold text-emerald-300 mb-4">Experience</h2>
-    <p class="text-emerald-100 max-w-3xl mx-auto">
-      Practical experience in SOC operations, incident response, and AWS infrastructure.  
-      Leveraged automation and analytics to strengthen security posture and improve operational efficiency.
-    </p>
-  </section>
-
-  <!-- CERTIFICATIONS -->
-  <section id="certifications" class="section bg-[#02170c]/70 text-center">
-    <h2 class="text-3xl font-bold text-emerald-300 mb-8">Certifications</h2>
-    <div class="flex flex-wrap justify-center gap-6">
-      <div class="bg-black/40 p-4 rounded-xl w-60 shadow-md hover:shadow-emerald-300/50 transition"><h3 class="font-semibold">ISC² Certified in Cybersecurity (CC)</h3></div>
-      <div class="bg-black/40 p-4 rounded-xl w-60 shadow-md hover:shadow-emerald-300/50 transition"><h3 class="font-semibold">AWS Academy Cloud Foundations</h3></div>
-      <div class="bg-black/40 p-4 rounded-xl w-60 shadow-md hover:shadow-emerald-300/50 transition"><h3 class="font-semibold">CompTIA Security+ (In Progress)</h3></div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact" class="section text-center">
     <h2 class="text-3xl font-bold text-emerald-300 mb-4">Contact</h2>
-    <p class="text-emerald-100">Reach out for collaborations, opportunities, or security research discussions:</p>
+    <p class="text-emerald-100">Let’s connect — I’m open to collaborations, full-time opportunities, and security research.</p>
     <p class="mt-2 text-emerald-300 font-medium">manaswee.nadgouda22@gmail.com</p>
   </section>
+
+  <!-- CURSOR REACTIVE JS -->
+  <script>
+    const hero = document.querySelector('.hero');
+    const glow = document.querySelector('.glow');
+    hero.addEventListener('mousemove', e => {
+      const x = (e.clientX / window.innerWidth) * 100;
+      const y = (e.clientY / window.innerHeight) * 100;
+      glow.style.setProperty('--x', `${x}%`);
+      glow.style.setProperty('--y', `${y}%`);
+    });
+  </script>
 
 </body>
 </html>
