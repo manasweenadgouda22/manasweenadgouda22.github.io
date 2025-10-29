@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manaswee Balvant Nadgouda — Cloud • Security • Software</title>
+  <meta name="description" content="Portfolio — Software Engineering, Cloud, and Cybersecurity projects by Manaswee Balvant Nadgouda (ASU)." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --glass: rgba(255,255,255,0.06); }
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+    .glass { background: var(--glass); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
+    .chip { padding: 4px 10px; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); }
+    .card { background: var(--glass); border-radius: 1rem; padding: 1.25rem; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.08); }
+    .card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.3); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 0.75rem; padding: 0.5rem 1rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; }
+    .btn:hover { border-color: rgba(255,255,255,0.25); }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-slate-100">
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 bg-slate-950/70 backdrop-blur border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#top" class="font-extrabold tracking-tight text-lg">manaswee.dev</a>
+      <nav class="hidden md:flex gap-6 text-sm text-slate-300">
+        <a class="hover:text-white" href="#about">About</a>
+        <a class="hover:text-white" href="#skills">Skills</a>
+        <a class="hover:text-white" href="#projects">Projects</a>
+        <a class="hover:text-white" href="#experience">Experience</a>
+        <a class="hover:text-white" href="#certs">Certifications</a>
+        <a class="hover:text-white" href="#contact">Contact</a>
+      </nav>
+      <a href="#contact" class="btn bg-white/10">Hire me</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute -top-32 -left-32 w-[40rem] h-[40rem] rounded-full bg-blue-600/20 blur-3xl"></div>
+      <div class="absolute -bottom-40 -right-20 w-[36rem] h-[36rem] rounded-full bg-cyan-500/10 blur-3xl"></div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 py-24">
+      <p class="text-blue-300/80 font-semibold">Software • Cloud • Security</p>
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mt-2">Manaswee Balvant Nadgouda</h1>
+      <p class="mt-5 text-lg md:text-xl text-slate-300 max-w-2xl">Building tomorrow's cloud & security solutions. I design resilient software and secure systems with Python, AWS, and Kubernetes — bridging development, operations, and cyber defense.</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a class="btn bg-white text-slate-900" href="#projects">View Projects</a>
+        <a class="btn" href="https://www.linkedin.com/in/manasweenadgouda" target="_blank">LinkedIn</a>
+        <a class="btn" href="https://github.com/manasweenadgouda22" target="_blank">GitHub</a>
+        <a class="btn" href="#contact">Contact</a>
+      </div>
+      <p class="mt-6 text-sm text-slate-400">Actively seeking full-time roles (2026) in Software Engineering, Cloud, or Cybersecurity.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="max-w-6xl mx-auto px-4 py-12">
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="card">
+        <h2 class="text-xl font-bold">About</h2>
+        <p class="mt-3 text-slate-300">Software engineer with a security-first mindset. I focus on shipping reliable, secure systems backed by tests, metrics, and threat-aware reviews.</p>
+        <ul class="mt-4 space-y-2 text-slate-300 list-disc list-inside">
+          <li>M.S. Information Technology (Cybersecurity), Arizona State University</li>
+          <li>Daily stack: Python, Java, REST, Docker, Linux</li>
+          <li>Security: OWASP Top 10, secure coding, TCP/IP, DNS, HTTP, IAM</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2 class="text-xl font-bold">Focus Areas</h2>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span class="chip">Software Engineering</span>
+          <span class="chip">Cloud Engineering</span>
+          <span class="chip">Networking</span>
+          <span class="chip">Cybersecurity</span>
+          <span class="chip">Kubernetes</span>
+          <span class="chip">AWS</span>
+          <span class="chip">SIEM</span>
+        </div>
+        <h3 class="mt-6 font-semibold">Security & Networking</h3>
+        <p class="text-slate-300 mt-2">Traffic, reconnaissance, and log analysis with Wireshark, Nmap, Burp Suite, and Splunk. Foundations in routing/switching, firewalls, and cloud IAM.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="max-w-6xl mx-auto px-4 py-6">
+    <h2 class="text-2xl md:text-3xl font-extrabold">Core Skills</h2>
+    <div class="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="card">
+        <h3 class="font-bold">Languages & APIs</h3>
+        <p class="mt-2 text-slate-300">Python, Java, JavaScript • REST APIs • FastAPI</p>
+      </div>
+      <div class="card">
+        <h3 class="font-bold">Data & DevOps</h3>
+        <p class="mt-2 text-slate-300">PostgreSQL/MySQL • Git • Docker • Linux • CI/CD</p>
+      </div>
+      <div class="card">
+        <h3 class="font-bold">Cloud & Security</h3>
+        <p class="mt-2 text-slate-300">AWS (EC2, S3, IAM, CloudWatch) • Kubernetes • SIEM • OWASP</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl md:text-3xl font-extrabold">Projects</h2>
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+      <article class="card">
+        <h3 class="text-xl font-bold">Hidden Data Analysis in Network Forensics</h3>
+        <p class="mt-2 text-slate-300">Detecting covert channels like steganography and DNS tunneling in an isolated macOS sandbox. Zeek/Suricata pipelines + Python/Scapy heuristics with ML classifiers to reduce MTTD/MTTA.</p>
+        <p class="mt-2 text-sm text-slate-400">Zeek • Suricata • Wireshark • Python • Scapy • NIST 800-86</p>
+      </article>
+      <article class="card">
+        <h3 class="text-xl font-bold">AI-Driven Threat Analytics in Cloud</h3>
+        <p class="mt-2 text-slate-300">AI-powered detection across multi-cloud & containers. Automated anomaly detection pipelines; ~35% faster incident response.</p>
+        <p class="mt-2 text-sm text-slate-400">Python • AWS • Kubernetes • Docker • SIEM • ELK</p>
+      </article>
+      <article class="card">
+        <h3 class="text-xl font-bold">Password Strength Checker</h3>
+        <p class="mt-2 text-slate-300">FastAPI backend with entropy scoring, dictionary/sequence checks, CLI & Swagger UI.</p>
+        <p class="mt-2 text-sm text-slate-400">FastAPI • Python • DevSecOps</p>
+      </article>
+      <article class="card">
+        <h3 class="text-xl font-bold">OCR: Text Extraction & Recognition</h3>
+        <p class="mt-2 text-slate-300">Hybrid OCR with OpenCV + CNN (EMNIST). ~95% accuracy on handwritten characters.</p>
+        <p class="mt-2 text-sm text-slate-400">PyTorch • OpenCV • Tesseract • EMNIST</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl md:text-3xl font-extrabold">Experience</h2>
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+      <div class="card">
+        <h3 class="font-bold">Student Web Developer — Arizona State University</h3>
+        <p class="text-slate-400 text-sm">Sep 2025 – Present</p>
+        <ul class="mt-2 text-slate-300 list-disc list-inside space-y-1">
+          <li>Maintain accessible pages within ASU’s Drupal distribution (Unity Design System).</li>
+          <li>Audit with Siteimprove; coordinate work via Teamwork Desk.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 class="font-bold">Software Engineer Intern — Escape™ App</h3>
+        <p class="text-slate-400 text-sm">Jun 2025 – Present</p>
+        <ul class="mt-2 text-slate-300 list-disc list-inside space-y-1">
+          <li>Manual + automated testing across web, mobile, and cloud apps.</li>
+          <li>Authored test plans/cases; tracked defects in Jira/Trello; supported CI.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 class="font-bold">Software Engineer — Cambium Networks</h3>
+        <p class="text-slate-400 text-sm">Aug 2022 – Jun 2024</p>
+        <ul class="mt-2 text-slate-300 list-disc list-inside space-y-1">
+          <li>Automated test frameworks for 10+ features; improved reliability by 35%.</li>
+          <li>Raised code coverage by 40% via unit/integration testing.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 class="font-bold">Software Engineer Intern — Wipro</h3>
+        <p class="text-slate-400 text-sm">Mar 2022 – May 2022</p>
+        <ul class="mt-2 text-slate-300 list-disc list-inside space-y-1">
+          <li>Java backend enhancements and deployment support.</li>
+          <li>Frontend integration improvements enhancing UX.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certs" class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl md:text-3xl font-extrabold">Certifications</h2>
+    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="card"><h3 class="font-bold">ISC2 Certified in Cybersecurity</h3><p class="text-slate-300 mt-1">Issued Apr 2025 • Expires Apr 2028</p></div>
+      <div class="card"><h3 class="font-bold">AWS Academy Cloud Architecting</h3><p class="text-slate-300 mt-1">Issued Apr 2025</p></div>
+      <div class="card"><h3 class="font-bold">AWS Solutions Architect — Associate</h3><p class="text-slate-300 mt-1">(in-progress)</p></div>
+      <div class="card"><h3 class="font-bold">CompTIA Security+</h3><p class="text-slate-300 mt-1">(in-progress)</p></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="max-w-6xl mx-auto px-4 py-16">
+    <div class="card">
+      <div class="md:flex items-center justify-between gap-6">
+        <div class="max-w-2xl">
+          <h2 class="text-2xl md:text-3xl font-extrabold">Let’s build something secure ⚡</h2>
+          <p class="mt-2 text-slate-300">Open to Software, Cloud, and Security roles starting 2026. Reach out for resumes or collaboration.</p>
+        </div>
+        <div class="mt-4 md:mt-0 flex flex-wrap gap-3">
+          <a class="btn bg-white text-slate-900" href="mailto:mnadgoud@asu.edu">Email</a>
+          <a class="btn" href="https://www.linkedin.com/in/manasweenadgouda" target="_blank">LinkedIn</a>
+          <a class="btn" href="https://github.com/manasweenadgouda22" target="_blank">GitHub</a>
+          <a class="btn" href="#top">Back to top</a>
+        </div>
+      </div>
+    </div>
+    <p class="text-center text-xs text-slate-500 mt-6">© <span id="y"></span> Manaswee Balvant Nadgouda • Built with Tailwind • Deployed on GitHub Pages</p>
+  </section>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
